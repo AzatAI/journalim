@@ -1,9 +1,10 @@
 
 
 <p align="center">
-  <a href="https://unisat.kz">
+  <a href="https://github.com/AzatAI/journalim-protocol">
     <img src="resources/journalim-logo.png" alt="Logo" width="200" height="200">
   </a>
+
 
   <h3 align="center">Journalim Protocol</h3>
 
