@@ -8,7 +8,7 @@
   <h3 align="center">Journalim Protocol</h3>
 
   <p align="center">
-    Publishing without Burders
+    Publishing without Borders
     <br /><br>
     <a href="https://github.com/AzatAI/journalim-protocol"><strong>Journalim Protocol »</strong></a><br>
     <a href="https://github.com/AzatAI/journalim-protocol"><strong>Journalim Backend Services »</strong></a><br>
