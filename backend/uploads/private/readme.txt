@@ -1,0 +1,1 @@
+Private uploaded attachment files will be served from this directory (This is mainly for the Journal PDF files)

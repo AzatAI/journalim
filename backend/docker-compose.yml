@@ -1,0 +1,33 @@
+version: '3.9'
+
+services:
+  api:
+    build: .
+    command: bash -c 'while !</dev/tcp/db/5432; do sleep 1; done; uvicorn app.main:app --proxy-headers --host 0.0.0.0'
+    volumes:
+      - .:/app
+    ports:
+      - 8008:8000
+    environment:
+      - PROJECT_NAME=JBS Backend Service
+      - PROJECT_VERSION=0.0.1
+      - PROJECT_DESCRIPTION=Journalim Protocol Compatible Backend Service
+      - SUPER_ADMIN_USERNAME=admin
+      - SUPER_ADMIN_PASSWORD=journalim
+      - SUPER_ADMIN_EMAIL=journalim@azat.ai
+      - DATABASE_URL=postgresql+asyncpg://postgres:postgres@db:5432/journalim
+  db:
+    image: postgres:latest
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    ports:
+      - 8007:5432
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=journalim
+
+
+volumes:
+  postgres_data:
+

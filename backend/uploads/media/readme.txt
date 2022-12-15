@@ -1,0 +1,1 @@
+Public static media files will be served from this directory.

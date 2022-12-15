@@ -1,0 +1,16 @@
+sqlalchemy
+greenlet
+asyncpg
+alembic
+fastapi
+sqlmodel
+uvicorn
+alembic
+orjson
+python-multipart
+python-jose[cryptography]
+passlib[bcrypt]
+pydantic
+passlib
+email-validator
+aiofiles
