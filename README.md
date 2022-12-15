@@ -6,10 +6,10 @@
   </a>
 
 
-  <h3 align="center">Journalim Protocol</h3>
+  <h3 align="center">Journalim ✨</h3>
 
   <p align="center">
-    Publishing without Borders
+    Publish as you wish.
     <br /><br>
     <a href="https://github.com/AzatAI/journalim-protocol"><strong>Journalim Protocol »</strong></a><br>
     <a href="https://github.com/AzatAI/journalim-protocol"><strong>Journalim Backend Services »</strong></a><br>
@@ -22,6 +22,7 @@
     ·
     <a href="https://github.com/AzatAI/journalim-protocol/issues">Request Feature</a>
   </p>
+
 
 
 
