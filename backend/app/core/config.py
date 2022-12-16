@@ -24,7 +24,7 @@ class Settings(BaseSettings):
     SUPER_ADMIN_EMAIL: str = Field(default="journalim@azat.ai", env="SUPER_ADMIN_EMAIL")
     SUPER_ADMIN_PASSWORD: str = Field(default="journalim", env="SUPER_ADMIN_PASSWORD")
     DATABASE_URL: PostgresDsn = Field(
-        default="postgresql+asyncpg://postgres:postgres@db:5432/journalim",
+        default="postgresql+asyncpg://postgres:postgres@localhost:5432/journalim",
         env="DATABASE_URL",
     )
     TOKEN_SECRET: str = Field(
