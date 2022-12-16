@@ -1,0 +1,177 @@
+# io.swagger.client - Kotlin client library for JBS Backend Service
+
+## Requires
+
+* Kotlin 1.4.30
+* Gradle 5.3
+
+## Build
+
+First, create the gradle wrapper script:
+
+```
+gradle wrapper
+```
+
+Then, run:
+
+```
+./gradlew check assemble
+```
+
+This runs all tests and packages the library.
+
+## Features/Implementation Notes
+
+* Supports JSON inputs/outputs, File inputs, and Form inputs.
+* Supports collection formats for query parameters: csv, tsv, ssv, pipes.
+* Some Kotlin and Java types are fully qualified to avoid conflicts with types defined in Swagger definitions.
+* Implementation of ApiClient is intended to reduce method counts, specifically to benefit Android targets.
+
+<a name="documentation-for-api-endpoints"></a>
+## Documentation for API Endpoints
+
+All URIs are relative to *http://journalim.gepsoz.com*
+
+Class | Method | HTTP request | Description
+------------ | ------------- | ------------- | -------------
+*AttachmentApi* | [**createAttachmentAttachmentsPost**](docs/AttachmentApi.md#createattachmentattachmentspost) | **POST** /attachments | Create Attachment
+*AttachmentApi* | [**deleteAttachmentAttachmentsAttachmentIdDelete**](docs/AttachmentApi.md#deleteattachmentattachmentsattachmentiddelete) | **DELETE** /attachments/{attachment_id} | Delete Attachment
+*AttachmentApi* | [**readAttachmentAttachmentsAttachmentIdGet**](docs/AttachmentApi.md#readattachmentattachmentsattachmentidget) | **GET** /attachments/{attachment_id} | Read Attachment
+*AttachmentApi* | [**readAttachmentsAttachmentsGet**](docs/AttachmentApi.md#readattachmentsattachmentsget) | **GET** /attachments | Read Attachments
+*AttachmentApi* | [**updateAttachmentAttachmentsAttachmentIdPatch**](docs/AttachmentApi.md#updateattachmentattachmentsattachmentidpatch) | **PATCH** /attachments/{attachment_id} | Update Attachment
+*DefaultApi* | [**pingPingGet**](docs/DefaultApi.md#pingpingget) | **GET** /ping | Ping
+*IssueApi* | [**createIssueIssuesPost**](docs/IssueApi.md#createissueissuespost) | **POST** /issues | Create Issue
+*IssueApi* | [**createIssueLanguageIssueLanguagesPost**](docs/IssueApi.md#createissuelanguageissuelanguagespost) | **POST** /issue_languages | Create Issue Language
+*IssueApi* | [**deleteIssueIssuesIssueIdDelete**](docs/IssueApi.md#deleteissueissuesissueiddelete) | **DELETE** /issues/{issue_id} | Delete Issue
+*IssueApi* | [**deleteIssueLanguageIssueLanguagesIssueLanguageIdDelete**](docs/IssueApi.md#deleteissuelanguageissuelanguagesissuelanguageiddelete) | **DELETE** /issue_languages/{issue_language_id} | Delete Issue Language
+*IssueApi* | [**readIssueIssuesIssueIdGet**](docs/IssueApi.md#readissueissuesissueidget) | **GET** /issues/{issue_id} | Read Issue
+*IssueApi* | [**readIssueLanguageIssueLanguagesIssueLanguageIdGet**](docs/IssueApi.md#readissuelanguageissuelanguagesissuelanguageidget) | **GET** /issue_languages/{issue_language_id} | Read Issue Language
+*IssueApi* | [**readIssueLanguagesIssueLanguagesGet**](docs/IssueApi.md#readissuelanguagesissuelanguagesget) | **GET** /issue_languages | Read Issue Languages
+*IssueApi* | [**readIssuesIssuesGet**](docs/IssueApi.md#readissuesissuesget) | **GET** /issues | Read Issues
+*IssueApi* | [**updateIssueIssuesIssueIdPatch**](docs/IssueApi.md#updateissueissuesissueidpatch) | **PATCH** /issues/{issue_id} | Update Issue
+*IssueApi* | [**updateIssueLanguageIssueLanguagesIssueLanguageIdPatch**](docs/IssueApi.md#updateissuelanguageissuelanguagesissuelanguageidpatch) | **PATCH** /issue_languages/{issue_language_id} | Update Issue Language
+*LanguageApi* | [**createLanguageLanguagesPost**](docs/LanguageApi.md#createlanguagelanguagespost) | **POST** /languages | Create Language
+*LanguageApi* | [**deleteLanguageLanguagesLanguageIdDelete**](docs/LanguageApi.md#deletelanguagelanguageslanguageiddelete) | **DELETE** /languages/{language_id} | Delete Language
+*LanguageApi* | [**readLanguageLanguagesLanguageIdGet**](docs/LanguageApi.md#readlanguagelanguageslanguageidget) | **GET** /languages/{language_id} | Read Language
+*LanguageApi* | [**readLanguagesLanguagesGet**](docs/LanguageApi.md#readlanguageslanguagesget) | **GET** /languages | Read Languages
+*LanguageApi* | [**updateLanguageLanguagesLanguageIdPatch**](docs/LanguageApi.md#updatelanguagelanguageslanguageidpatch) | **PATCH** /languages/{language_id} | Update Language
+*MediaApi* | [**createUploadUploadPost**](docs/MediaApi.md#createuploaduploadpost) | **POST** /upload | Create Upload
+*MediaApi* | [**deleteMediaMediasMediaIdDelete**](docs/MediaApi.md#deletemediamediasmediaiddelete) | **DELETE** /medias/{media_id} | Delete Media
+*MediaApi* | [**readMediaMediasMediaIdGet**](docs/MediaApi.md#readmediamediasmediaidget) | **GET** /medias/{media_id} | Read Media
+*MediaApi* | [**readMediasMediasGet**](docs/MediaApi.md#readmediasmediasget) | **GET** /medias | Read Medias
+*MediaApi* | [**updateMediaMediasMediaIdPatch**](docs/MediaApi.md#updatemediamediasmediaidpatch) | **PATCH** /medias/{media_id} | Update Media
+*PageApi* | [**createPageLanguagePageLanguagesPost**](docs/PageApi.md#createpagelanguagepagelanguagespost) | **POST** /page_languages | Create Page Language
+*PageApi* | [**createPagePagesPost**](docs/PageApi.md#createpagepagespost) | **POST** /pages | Create Page
+*PageApi* | [**deletePageLanguagePageLanguagesPageLanguageIdDelete**](docs/PageApi.md#deletepagelanguagepagelanguagespagelanguageiddelete) | **DELETE** /page_languages/{page_language_id} | Delete Page Language
+*PageApi* | [**deletePagePagesPageIdDelete**](docs/PageApi.md#deletepagepagespageiddelete) | **DELETE** /pages/{page_id} | Delete Page
+*PageApi* | [**readPageLanguagePageLanguagesPageLanguageIdGet**](docs/PageApi.md#readpagelanguagepagelanguagespagelanguageidget) | **GET** /page_languages/{page_language_id} | Read Page Language
+*PageApi* | [**readPageLanguagesPageLanguagesGet**](docs/PageApi.md#readpagelanguagespagelanguagesget) | **GET** /page_languages | Read Page Languages
+*PageApi* | [**readPagePagesPageIdGet**](docs/PageApi.md#readpagepagespageidget) | **GET** /pages/{page_id} | Read Page
+*PageApi* | [**readPagesPagesGet**](docs/PageApi.md#readpagespagesget) | **GET** /pages | Read Pages
+*PageApi* | [**updatePageLanguagePageLanguagesPageLanguageIdPatch**](docs/PageApi.md#updatepagelanguagepagelanguagespagelanguageidpatch) | **PATCH** /page_languages/{page_language_id} | Update Page Language
+*PageApi* | [**updatePagePagesPageIdPatch**](docs/PageApi.md#updatepagepagespageidpatch) | **PATCH** /pages/{page_id} | Update Page
+*PostApi* | [**createPostLanguagePostLanguagesPost**](docs/PostApi.md#createpostlanguagepostlanguagespost) | **POST** /post_languages | Create Post Language
+*PostApi* | [**createPostPostsPost**](docs/PostApi.md#createpostpostspost) | **POST** /posts | Create Post
+*PostApi* | [**deletePostLanguagePostLanguagesPostLanguageIdDelete**](docs/PostApi.md#deletepostlanguagepostlanguagespostlanguageiddelete) | **DELETE** /post_languages/{post_language_id} | Delete Post Language
+*PostApi* | [**deletePostPostsPostIdDelete**](docs/PostApi.md#deletepostpostspostiddelete) | **DELETE** /posts/{post_id} | Delete Post
+*PostApi* | [**readPostLanguagePostLanguagesPostLanguageIdGet**](docs/PostApi.md#readpostlanguagepostlanguagespostlanguageidget) | **GET** /post_languages/{post_language_id} | Read Post Language
+*PostApi* | [**readPostLanguagesPostLanguagesGet**](docs/PostApi.md#readpostlanguagespostlanguagesget) | **GET** /post_languages | Read Post Languages
+*PostApi* | [**readPostPostsPostIdGet**](docs/PostApi.md#readpostpostspostidget) | **GET** /posts/{post_id} | Read Post
+*PostApi* | [**readPostsPostsGet**](docs/PostApi.md#readpostspostsget) | **GET** /posts | Read Posts
+*PostApi* | [**updatePostLanguagePostLanguagesPostLanguageIdPatch**](docs/PostApi.md#updatepostlanguagepostlanguagespostlanguageidpatch) | **PATCH** /post_languages/{post_language_id} | Update Post Language
+*PostApi* | [**updatePostPostsPostIdPatch**](docs/PostApi.md#updatepostpostspostidpatch) | **PATCH** /posts/{post_id} | Update Post
+*PublicationApi* | [**createPublicationLanguagePublicationLanguagesPost**](docs/PublicationApi.md#createpublicationlanguagepublicationlanguagespost) | **POST** /publication_languages | Create Publication Language
+*PublicationApi* | [**createPublicationPublicationsPost**](docs/PublicationApi.md#createpublicationpublicationspost) | **POST** /publications | Create Publication
+*PublicationApi* | [**deletePublicationLanguagePublicationLanguagesPublicationLanguageIdDelete**](docs/PublicationApi.md#deletepublicationlanguagepublicationlanguagespublicationlanguageiddelete) | **DELETE** /publication_languages/{publication_language_id} | Delete Publication Language
+*PublicationApi* | [**deletePublicationPublicationsPublicationIdDelete**](docs/PublicationApi.md#deletepublicationpublicationspublicationiddelete) | **DELETE** /publications/{publication_id} | Delete Publication
+*PublicationApi* | [**readPublicationLanguagePublicationLanguagesPublicationLanguageIdGet**](docs/PublicationApi.md#readpublicationlanguagepublicationlanguagespublicationlanguageidget) | **GET** /publication_languages/{publication_language_id} | Read Publication Language
+*PublicationApi* | [**readPublicationLanguagesPublicationLanguagesGet**](docs/PublicationApi.md#readpublicationlanguagespublicationlanguagesget) | **GET** /publication_languages | Read Publication Languages
+*PublicationApi* | [**readPublicationPublicationsPublicationIdGet**](docs/PublicationApi.md#readpublicationpublicationspublicationidget) | **GET** /publications/{publication_id} | Read Publication
+*PublicationApi* | [**readPublicationsPublicationsGet**](docs/PublicationApi.md#readpublicationspublicationsget) | **GET** /publications | Read Publications
+*PublicationApi* | [**updatePublicationLanguagePublicationLanguagesPublicationLanguageIdPatch**](docs/PublicationApi.md#updatepublicationlanguagepublicationlanguagespublicationlanguageidpatch) | **PATCH** /publication_languages/{publication_language_id} | Update Publication Language
+*PublicationApi* | [**updatePublicationPublicationsPublicationIdPatch**](docs/PublicationApi.md#updatepublicationpublicationspublicationidpatch) | **PATCH** /publications/{publication_id} | Update Publication
+*SiteApi* | [**createSiteLanguageSiteLanguagesPost**](docs/SiteApi.md#createsitelanguagesitelanguagespost) | **POST** /site_languages | Create Site Language
+*SiteApi* | [**createSiteSitesPost**](docs/SiteApi.md#createsitesitespost) | **POST** /sites | Create Site
+*SiteApi* | [**deleteSiteLanguageSiteLanguagesSiteLanguageIdDelete**](docs/SiteApi.md#deletesitelanguagesitelanguagessitelanguageiddelete) | **DELETE** /site_languages/{site_language_id} | Delete Site Language
+*SiteApi* | [**deleteSiteSitesSiteIdDelete**](docs/SiteApi.md#deletesitesitessiteiddelete) | **DELETE** /sites/{site_id} | Delete Site
+*SiteApi* | [**readSiteLanguageSiteLanguagesSiteLanguageIdGet**](docs/SiteApi.md#readsitelanguagesitelanguagessitelanguageidget) | **GET** /site_languages/{site_language_id} | Read Site Language
+*SiteApi* | [**readSiteLanguagesSiteLanguagesGet**](docs/SiteApi.md#readsitelanguagessitelanguagesget) | **GET** /site_languages | Read Site Languages
+*SiteApi* | [**readSiteSitesSiteIdGet**](docs/SiteApi.md#readsitesitessiteidget) | **GET** /sites/{site_id} | Read Site
+*SiteApi* | [**readSitesSitesGet**](docs/SiteApi.md#readsitessitesget) | **GET** /sites | Read Sites
+*SiteApi* | [**updateSiteLanguageSiteLanguagesSiteLanguageIdPatch**](docs/SiteApi.md#updatesitelanguagesitelanguagessitelanguageidpatch) | **PATCH** /site_languages/{site_language_id} | Update Site Language
+*SiteApi* | [**updateSiteSitesSiteIdPatch**](docs/SiteApi.md#updatesitesitessiteidpatch) | **PATCH** /sites/{site_id} | Update Site
+*TokenApi* | [**createTokenTokenPost**](docs/TokenApi.md#createtokentokenpost) | **POST** /token | Create Token
+*UserApi* | [**createUserUsersPost**](docs/UserApi.md#createuseruserspost) | **POST** /users | Create User
+*UserApi* | [**deleteUserUsersUserIdDelete**](docs/UserApi.md#deleteuserusersuseriddelete) | **DELETE** /users/{user_id} | Delete User
+*UserApi* | [**getCurrentUserUsersMeGet**](docs/UserApi.md#getcurrentuserusersmeget) | **GET** /users/me | Get Current User
+*UserApi* | [**getUserUsersUserIdGet**](docs/UserApi.md#getuserusersuseridget) | **GET** /users/{user_id} | Get User
+*UserApi* | [**getUsersUsersGet**](docs/UserApi.md#getusersusersget) | **GET** /users | Get Users
+*UserApi* | [**updateUserUsersUserIdPatch**](docs/UserApi.md#updateuserusersuseridpatch) | **PATCH** /users/{user_id} | Update User
+
+<a name="documentation-for-models"></a>
+## Documentation for Models
+
+ - [io.swagger.client.models.AnyOfGenericFileUploadResponsePath](docs/AnyOfGenericFileUploadResponsePath.md)
+ - [io.swagger.client.models.AnyOfValidationErrorLocItems](docs/AnyOfValidationErrorLocItems.md)
+ - [io.swagger.client.models.AttachmentCreate](docs/AttachmentCreate.md)
+ - [io.swagger.client.models.AttachmentRead](docs/AttachmentRead.md)
+ - [io.swagger.client.models.AttachmentUpdate](docs/AttachmentUpdate.md)
+ - [io.swagger.client.models.BodyCreateTokenTokenPost](docs/BodyCreateTokenTokenPost.md)
+ - [io.swagger.client.models.BodyCreateUploadUploadPost](docs/BodyCreateUploadUploadPost.md)
+ - [io.swagger.client.models.ErrorResponseModel](docs/ErrorResponseModel.md)
+ - [io.swagger.client.models.GenericFileUploadResponse](docs/GenericFileUploadResponse.md)
+ - [io.swagger.client.models.HTTPValidationError](docs/HTTPValidationError.md)
+ - [io.swagger.client.models.IssueCreate](docs/IssueCreate.md)
+ - [io.swagger.client.models.IssueLanguageCreate](docs/IssueLanguageCreate.md)
+ - [io.swagger.client.models.IssueLanguageRead](docs/IssueLanguageRead.md)
+ - [io.swagger.client.models.IssueLanguageUpdate](docs/IssueLanguageUpdate.md)
+ - [io.swagger.client.models.IssueRead](docs/IssueRead.md)
+ - [io.swagger.client.models.IssueUpdate](docs/IssueUpdate.md)
+ - [io.swagger.client.models.LanguageCreate](docs/LanguageCreate.md)
+ - [io.swagger.client.models.LanguageRead](docs/LanguageRead.md)
+ - [io.swagger.client.models.LanguageUpdate](docs/LanguageUpdate.md)
+ - [io.swagger.client.models.MediaRead](docs/MediaRead.md)
+ - [io.swagger.client.models.MediaUpdate](docs/MediaUpdate.md)
+ - [io.swagger.client.models.PageCreate](docs/PageCreate.md)
+ - [io.swagger.client.models.PageLanguageCreate](docs/PageLanguageCreate.md)
+ - [io.swagger.client.models.PageLanguageRead](docs/PageLanguageRead.md)
+ - [io.swagger.client.models.PageLanguageUpdate](docs/PageLanguageUpdate.md)
+ - [io.swagger.client.models.PageRead](docs/PageRead.md)
+ - [io.swagger.client.models.PageUpdate](docs/PageUpdate.md)
+ - [io.swagger.client.models.PostCreate](docs/PostCreate.md)
+ - [io.swagger.client.models.PostLanguageCreate](docs/PostLanguageCreate.md)
+ - [io.swagger.client.models.PostLanguageRead](docs/PostLanguageRead.md)
+ - [io.swagger.client.models.PostLanguageUpdate](docs/PostLanguageUpdate.md)
+ - [io.swagger.client.models.PostRead](docs/PostRead.md)
+ - [io.swagger.client.models.PostUpdate](docs/PostUpdate.md)
+ - [io.swagger.client.models.PublicationCreate](docs/PublicationCreate.md)
+ - [io.swagger.client.models.PublicationLanguageCreate](docs/PublicationLanguageCreate.md)
+ - [io.swagger.client.models.PublicationLanguageRead](docs/PublicationLanguageRead.md)
+ - [io.swagger.client.models.PublicationLanguageUpdate](docs/PublicationLanguageUpdate.md)
+ - [io.swagger.client.models.PublicationRead](docs/PublicationRead.md)
+ - [io.swagger.client.models.PublicationUpdate](docs/PublicationUpdate.md)
+ - [io.swagger.client.models.SiteCreate](docs/SiteCreate.md)
+ - [io.swagger.client.models.SiteLanguageCreate](docs/SiteLanguageCreate.md)
+ - [io.swagger.client.models.SiteLanguageRead](docs/SiteLanguageRead.md)
+ - [io.swagger.client.models.SiteLanguageUpdate](docs/SiteLanguageUpdate.md)
+ - [io.swagger.client.models.SiteRead](docs/SiteRead.md)
+ - [io.swagger.client.models.SiteUpdate](docs/SiteUpdate.md)
+ - [io.swagger.client.models.SuccessResponseModel](docs/SuccessResponseModel.md)
+ - [io.swagger.client.models.Token](docs/Token.md)
+ - [io.swagger.client.models.UserCreate](docs/UserCreate.md)
+ - [io.swagger.client.models.UserRead](docs/UserRead.md)
+ - [io.swagger.client.models.UserUpdate](docs/UserUpdate.md)
+ - [io.swagger.client.models.ValidationError](docs/ValidationError.md)
+
+<a name="documentation-for-authorization"></a>
+## Documentation for Authorization
+
+<a name="OAuth2PasswordBearer"></a>
+### OAuth2PasswordBearer
+
+- **Type**: OAuth
+- **Flow**: password
+- **Authorization URL**: 
+- **Scopes**: 
+

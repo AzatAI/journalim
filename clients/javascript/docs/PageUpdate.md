@@ -1,0 +1,11 @@
+# JbsBackendService.PageUpdate
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**title** | **String** |  | [optional] 
+**description** | **String** |  | [optional] 
+**keywords** | **String** |  | [optional] 
+**author** | **String** |  | [optional] 
+**featuredImage** | **String** |  | [optional] 
+**content** | **String** |  | [optional] 

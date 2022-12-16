@@ -1,0 +1,10 @@
+# SiteLanguageCreate
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**title** | **String** |  |  [optional]
+**description** | **String** |  |  [optional]
+**alternativeLogo** | **String** |  |  [optional]
+**siteId** | **Integer** |  |  [optional]
+**languageId** | **Integer** |  |  [optional]
