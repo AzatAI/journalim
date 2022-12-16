@@ -3,11 +3,11 @@ version: '3.9'
 services:
   api:
     build: .
-    command: bash -c 'while !</dev/tcp/db/5432; do sleep 1; done; uvicorn app.main:app --proxy-headers --host 0.0.0.0'
+    command: bash -c 'while !</dev/tcp/db/5432; do sleep 1; done; uvicorn app.main:app --proxy-headers --host 0.0.0.0 --port 80'
     volumes:
       - .:/app
     ports:
-      - 8008:8000
+      - 8008:80
     environment:
       - PROJECT_NAME=JBS Backend Service
       - PROJECT_VERSION=0.0.1
