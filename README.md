@@ -42,11 +42,95 @@ Simply implement all end points shown in the ‘Endpoints and Standards’ secti
 
 Check here regularly, as we have a plan to implment the Journalim Frontend for Android and iOS platforms.
 
+### Backend
+
+#### Deploy on localhost
+
+The simplest way to deploy JBS on local host is by using `Docker`:
+
+```
+version: '3.9'
+
+services:
+  api:
+    build: .
+    command: bash -c 'while !</dev/tcp/db/5432; do sleep 1; done; uvicorn app.main:app --proxy-headers --host 0.0.0.0 --port 80'
+    volumes:
+      - .:/app
+    ports:
+      - 8008:8000
+    environment:
+      - PROJECT_NAME=JBS Backend Service
+      - PROJECT_VERSION=0.0.1
+      - PROJECT_DESCRIPTION=Journalim Protocol Compatible Backend Service
+      - SUPER_ADMIN_USERNAME=YOUR ADMIN USERNAME
+      - SUPER_ADMIN_PASSWORD=YOUR ADMIN PASSWORD
+      - SUPER_ADMIN_EMAIL=YOUR ADMIN EMAIL
+      - DATABASE_URL=postgresql+asyncpg://postgres:postgres@db:5432/journalim
+  db:
+    image: postgres:latest
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    ports:
+      - 8007:5432
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=journalim
+
+
+volumes:
+  postgres_data:
+```
+
+#### Deploy with Traefik
+
+Deploying on servers are relatively complex than running on localhost. Here we show the minimum deployment labels for Traefik
+
+```yml
+labels:
+      # Enable Traefik for this specific "journali-api" service
+      - traefik.enable=true
+      # Define the port inside of the Docker Service to use
+      - traefik.http.services.app.loadbalancer.server.port=80
+      # Make Traefik use this domain in HTTP
+      - traefik.http.routers.app-http.entrypoints=http
+      - traefik.http.routers.app-http.rule=Host(`journalim.gepsoz.com`)
+      # Use the trafik-public network (declared below)
+      - traefik.docker.network=traefik-public
+    networks:
+      # Use the public network created to be shared between Traefik
+      # any other service that needs to be publicly available
+      - traefik-public
+      # This network named Journalim is only shared between services in this docker compose.
+      - journalim
+```
+
+### Clients
+
+### Frontend
+
+`cd` to `clients` for details.
+
+JBS provides client libraries in the following languages:
+
+- Dart 
+- Javascript 
+- JAVA
+- Kotlin
+- Python3
+- Swift5
+- Typescript
+  - with `axios`
+  - with `fetch`
+
 ## Standards
 
+Standards are coming.
 
+## Contributions
 
-
+Contributions are welcomed. I am planning a new docs for developers explaining the sowftware architecture, development dependencies and etc, stay connected.
 
 ## Licenses
 
