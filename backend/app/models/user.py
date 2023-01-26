@@ -10,8 +10,8 @@ class UserBase(SQLModel):
     username: str = Field(index=True, unique=True)
     email: EmailStr = Field(unique=True, index=True)  # this field should be unique for table and this field is required
     fullname: str | None = None
-    created_at: datetime = Field(default=datetime.utcnow())
-    updated_at: datetime = Field(default_factory=datetime.utcnow)
+    # created_at: datetime = Field(default_factory=datetime.utcnow)
+    # updated_at: datetime = Field(default_factory=datetime.utcnow)
 
 
 class User(UserBase, table=True):

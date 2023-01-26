@@ -21,6 +21,7 @@ async def create_admin(username: str, email: EmailStr, password: str):
         pwd = PasswordHandler(session=session)
         password = await pwd.hash(password)
         data = UserCreate(username=username, email=email, password=password)
+        print(data)
         user = User.from_orm(data)
         user.is_admin = True
         user.is_staff = True
