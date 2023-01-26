@@ -1,7 +1,7 @@
 # app / main.py
 # Created by azat at 13.12.2022
 
-
+import logging
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles

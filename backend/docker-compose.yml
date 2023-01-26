@@ -7,7 +7,7 @@ services:
     volumes:
       - .:/app
     ports:
-      - 8008:80
+      - "8008:80"
     environment:
       - PROJECT_NAME=JBS Backend Service
       - PROJECT_VERSION=0.0.1
@@ -21,7 +21,7 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     ports:
-      - 8007:5432
+      - "8007:5432"
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres

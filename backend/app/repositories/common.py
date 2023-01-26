@@ -34,7 +34,6 @@ class AsyncDBHelper:
     async def create_one(self, data: T):
         """Create one instance of T in the table"""
         obj = self.Table.from_orm(data)
-        print(obj)
         self.session.add(obj)
         try:
             await self.session.commit()
@@ -56,7 +55,6 @@ class AsyncDBHelper:
     async def create_one_with_parent(self, data: T):
         """Create one instance of T in the table"""
         obj = self.Table.from_orm(data)
-        print(obj)
         self.session.add(obj)
         try:
             await self.session.commit()
@@ -64,7 +62,6 @@ class AsyncDBHelper:
         except Exception as error:
             raw_str_list = str(error).strip().split('\n')
             message: str = ""
-            print("Error on create_one:", raw_str_list)
             for each in raw_str_list:
                 if each.startswith('DETAIL'):
                     message = each
@@ -92,7 +89,6 @@ class AsyncDBHelper:
         except Exception as error:
             raw_str_list = str(error).strip().split('\n')
             message: str = ""
-            print("Error on create_one:", raw_str_list)
             for each in raw_str_list:
                 if each.startswith('DETAIL'):
                     message = each
@@ -104,13 +100,9 @@ class AsyncDBHelper:
             )
         return_dict = {}
         return_dict.update(obj.dict())
-        print("return_dict:", return_dict)
-        print("obj:", obj.dict())
-        print("child_obj:", child_obj.dict())
         return_dict.update(
             {f"{self.ChildTable.__tablename__}": child_obj.dict()}
         )
-        print("return_dict:", return_dict)
         return return_dict
 
     async def read_all(self, qp: CommonQueryParams = CommonQueryParams(offset=0, limit=100)):
@@ -151,12 +143,10 @@ class AsyncDBHelper:
     async def update_obj(self, obj, data: T):
         """updated obj instance of T"""
         _user_data = data.dict(exclude_unset=True)
-        print(_user_data)
         user_data = {}
         for k, v in obj:
             user_data[k] = v
         user_data.update(_user_data)
-        print('under data after drop', user_data)
         for key, value in user_data.items():
             setattr(obj, key, value)
         self.session.add(obj)
