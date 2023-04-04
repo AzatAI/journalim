@@ -34,6 +34,7 @@ async def create_user(*, data: UserCreate, session: AsyncSession = Depends(get_s
     except Exception as error:
         raw_str_list = str(error).strip().split('\n')
         message: str = ""
+        print(error)
         for each in raw_str_list:
             if each.startswith('DETAIL'):
                 message = each
